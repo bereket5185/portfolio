@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="<%= meta.description %>" />
+  <title><%= meta.title %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+
+<%- include('partials/header') %>
+
+<main>
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <section class="hero section" id="home">
+    <div class="hero-copy">
+      <p class="eyebrow"><span></span> <%= profile.headline %></p>
+      <h1>Bereket <strong>G/Alif.</strong></h1>
+      <p class="lead">
+        I transform raw data into meaningful insights through data analysis,
+        machine learning, automation, and intelligent applications.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#projects">
+          View projects
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="button secondary" href="#contact">
+          Contact
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 7l8 6 8-6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual profile-visual" aria-label="<%= profile.name %> profile card">
+      <div class="profile-frame">
+        <span class="corner corner-top"></span>
+        <span class="corner corner-bottom"></span>
+        <img src="<%= profile.image %>" alt="Portrait of <%= profile.name %>" />
+        <div class="profile-label"><%= profile.name %></div>
+        <div class="profile-open"><span></span> <%= profile.location %></div>
+        <div class="badge badge-years"><span></span> CS graduate</div>
+        <div class="badge badge-projects"><span></span> 5 projects featured</div>
+      </div>
+      <div class="availability-pill">
+        <span></span> Available for opportunities
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ─────────────────────────────────────────────── -->
+  <section class="section about-grid" id="about">
+    <div>
+      <p class="section-kicker">About</p>
+      <h2>Building toward world-class AI engineering through data-first problem solving.</h2>
+    </div>
+    <div class="about-content">
+      <p>
+        I am a Computer Science graduate from Ambo University with a strong passion for Data Science,
+        Artificial Intelligence, and Software Development. I specialise in transforming raw data into
+        meaningful insights through data analysis, machine learning, and automation.
+      </p>
+      <p>
+        My expertise includes Python programming, SQL, data preprocessing, feature engineering, web
+        scraping, exploratory data analysis, machine learning, and data visualisation. My goal is to
+        become a world-class AI Engineer while building intelligent applications that create real impact.
+      </p>
+      <div class="metric-row">
+        <div><b>2016</b><span>Graduated, E.C.</span></div>
+        <div><b>5</b><span>Featured projects</span></div>
+        <div><b>8</b><span>Service areas</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills ────────────────────────────────────────────── -->
+  <section class="section" id="skills">
+    <p class="section-kicker">Skills</p>
+    <div class="section-heading">
+      <h2>Technical toolkit.</h2>
+      <p>Programming, data science, machine learning, databases, and tools for practical data products.</p>
+    </div>
+    <div class="skills-grid">
+      <% skills.forEach(group => { %>
+      <article>
+        <h3><%= group.title %></h3>
+        <ul>
+          <% group.items.forEach(item => { %>
+          <li><%= item %></li>
+          <% }) %>
+        </ul>
+      </article>
+      <% }) %>
+    </div>
+  </section>
+
+  <!-- ── Projects ──────────────────────────────────────────── -->
+  <section class="section" id="projects">
+    <p class="section-kicker">Projects</p>
+    <div class="section-heading">
+      <h2>Selected projects.</h2>
+      <p>Applied projects across machine learning, scraping, exploratory analysis, and dashboards.</p>
+    </div>
+    <div class="project-list">
+      <% projects.forEach(p => { %>
+      <article class="project-card">
+        <div class="project-meta"><%= p.num %> — <%= p.category %></div>
+        <h3><%= p.title %></h3>
+        <p><%= p.desc %></p>
+        <div class="tags">
+          <% p.tags.forEach(tag => { %><span><%= tag %></span><% }) %>
+        </div>
+        <div class="project-links">
+          <a href="<%= p.github %>" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="#contact">Request demo</a>
+        </div>
+      </article>
+      <% }) %>
+    </div>
+  </section>
+
+  <!-- ── Experience ────────────────────────────────────────── -->
+  <section class="section experience" id="experience">
+    <p class="section-kicker">Experience</p>
+    <div class="section-heading">
+      <h2>Education and experience.</h2>
+      <p>Computer science training, technical support experience, and practical data projects.</p>
+    </div>
+    <div class="timeline">
+      <% experience.forEach(e => { %>
+      <article>
+        <span></span>
+        <p class="date"><%= e.org %></p>
+        <h3><%= e.role %></h3>
+        <p><%= e.desc %></p>
+      </article>
+      <% }) %>
+    </div>
+  </section>
+
+  <!-- ── Services ──────────────────────────────────────────── -->
+  <section class="section" id="services">
+    <p class="section-kicker">Services</p>
+    <div class="section-heading">
+      <h2>What I can help with.</h2>
+      <p>Focused services for teams, students, small businesses, and data-driven projects.</p>
+    </div>
+    <div class="skills-grid">
+      <% services.forEach(s => { %>
+      <article><h3><%= s.title %></h3><p><%= s.desc %></p></article>
+      <% }) %>
+    </div>
+  </section>
+
+  <!-- ── Quote ─────────────────────────────────────────────── -->
+  <section class="section endorsement">
+    <p class="section-kicker">Goal</p>
+    <blockquote>
+      &ldquo;My goal is to become a world-class AI Engineer while building intelligent
+      applications that create real impact.&rdquo;
+    </blockquote>
+  </section>
+
+  <!-- ── Contact ───────────────────────────────────────────── -->
+  <section class="section contact-section" id="contact">
+    <div>
+      <p class="section-kicker">Contact</p>
+      <h2>Let&rsquo;s build something useful from data.</h2>
+      <p>
+        Based in <%= profile.location %>. Open to data analysis, Python development,
+        machine learning, dashboard, and AI application opportunities.
+      </p>
+      <div class="contact-panel" style="margin-top:28px;">
+        <a href="mailto:<%= profile.email %>"><%= profile.email %></a>
+        <a href="tel:<%= profile.phone.replace(/\s/g,'') %>"><%= profile.phone %></a>
+        <a href="<%= profile.github %>" target="_blank" rel="noreferrer">GitHub: github.com/bereket5185</a>
+        <a href="<%= profile.linkedin %>" target="_blank" rel="noreferrer">LinkedIn: bereket-gebrealif</a>
+      </div>
+    </div>
+
+    <div>
+      <% if (flash) { %>
+      <div class="flash <%= flash.type %>"><%= flash.text %></div>
+      <% } %>
+      <form class="contact-form" method="POST" action="/contact">
+        <input  type="text"  name="name"    placeholder="Your name"    required />
+        <input  type="email" name="email"   placeholder="Your email"   required />
+        <textarea            name="message" placeholder="Your message" required></textarea>
+        <button type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<%- include('partials/footer') %>
+
+<script src="/script.js"></script>
+</body>
+</html>

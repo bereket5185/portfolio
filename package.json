@@ -1,0 +1,15 @@
+{
+  "name": "bereket-portfolio",
+  "version": "1.0.0",
+  "description": "Bereket G/Alif — Data, Python & AI Portfolio",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "dependencies": {
+    "express": "4.19.2",
+    "ejs": "3.1.10",
+    "nodemailer": "6.9.13"
+  }
+}
