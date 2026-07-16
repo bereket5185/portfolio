@@ -125,6 +125,13 @@ const data = {
       tags: ["Python", "Scikit-learn", "Pandas", "Seaborn", "GridSearchCV"],
       github: "https://github.com/bereket5185/customer-churn-decision-tree",
     },
+    {
+      num: "07", category: "Machine Learning",
+      title: "Credit Card Fraud Detection",
+      desc: "Built a fraud detection system using a Random Forest (Bagging) classifier on 10,000 transactions. Includes a full ML pipeline with One-Hot encoding, EDA, confusion matrix, ROC curve, and interactive prediction. Achieved high accuracy distinguishing fraudulent from normal transactions.",
+      tags: ["Python", "Scikit-learn", "Random Forest", "Pandas", "Matplotlib"],
+      github: "https://github.com/bereket5185/Credit-Card-Fraud-Detection",
+    },
   ],
   experience: [
     {
