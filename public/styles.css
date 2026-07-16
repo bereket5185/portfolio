@@ -229,7 +229,7 @@ h2 {
 .metric-row b { display: block; margin-bottom: 8px; color: var(--accent); font-size: 2rem; }
 .metric-row span { color: var(--muted); font-size: 0.92rem; }
 
-.skills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .skills-grid article, .project-card, .timeline article, .contact-panel {
   border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
 }

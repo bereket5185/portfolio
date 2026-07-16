@@ -30,10 +30,57 @@ const data = {
     image:     "/assets/bereket-profile.jpg",
   },
   skills: [
-    { title: "Programming",    items: ["Python", "SQL", "HTML and CSS", "JavaScript"] },
-    { title: "Data Science",   items: ["Pandas and NumPy", "Data cleaning and wrangling", "Feature engineering", "Matplotlib visualization"] },
-    { title: "Machine Learning", items: ["Classification and regression", "NLP and TF-IDF", "Perceptron and logistic regression", "Decision trees and random forest"] },
-    { title: "Tools & Databases", items: ["MySQL and SQLite", "Git and GitHub", "VS Code and Jupyter Notebook", "Google Colab and Power BI"] },
+    {
+      title: "Programming Languages",
+      items: ["Python", "PHP", "SQL", "JavaScript", "HTML & CSS"],
+    },
+    {
+      title: "Data Science & Analysis",
+      items: [
+        "Data Cleaning and Wrangling",
+        "Exploratory Data Analysis (EDA)",
+        "Feature Engineering",
+        "Statistical Analysis",
+        "Data Visualization with Matplotlib",
+        "Pandas and NumPy",
+        "Power BI Dashboard Development",
+      ],
+    },
+    {
+      title: "Machine Learning",
+      items: [
+        "Supervised Learning (Classification & Regression)",
+        "Logistic Regression",
+        "Perceptron Algorithm",
+        "Decision Trees and Random Forest",
+        "Model Evaluation (Accuracy, Precision, Recall, F1, MAE, RMSE, R²)",
+        "Natural Language Processing (NLP)",
+        "TF-IDF Vectorization",
+      ],
+    },
+    {
+      title: "Databases",
+      items: ["MySQL", "SQLite", "Database Design and SQL Queries"],
+    },
+    {
+      title: "Tools & Environment",
+      items: [
+        "Git and GitHub",
+        "VS Code and Jupyter Notebook",
+        "Google Colab",
+        "Streamlit",
+        "Scikit-learn, Pandas, NumPy, Matplotlib",
+      ],
+    },
+    {
+      title: "AI & Data Engineering",
+      items: [
+        "Machine Learning Workflow",
+        "Data Preprocessing Pipelines",
+        "Model Training and Deployment Basics",
+        "Data Analysis Automation with Python",
+      ],
+    },
   ],
   projects: [
     {
