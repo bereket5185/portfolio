@@ -71,6 +71,13 @@ const data = {
       tags: ["Power BI", "Python", "Business Insights"],
       github: "https://github.com/bereket5185/customer-data-dashboard",
     },
+    {
+      num: "06", category: "Machine Learning",
+      title: "Customer Churn Prediction",
+      desc: "Built a classification model to predict customer churn using a Decision Tree on the Telco dataset. Covers EDA, preprocessing, feature engineering, model training, GridSearchCV hyperparameter tuning, evaluation metrics, and a prediction script. Final model saved with Joblib.",
+      tags: ["Python", "Scikit-learn", "Pandas", "Seaborn", "GridSearchCV"],
+      github: "https://github.com/bereket5185/customer-churn-decision-tree",
+    },
   ],
   experience: [
     {
