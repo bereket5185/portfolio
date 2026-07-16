@@ -34,3 +34,38 @@ updateProgress();
 // Auto-dismiss flash messages
 const flash = document.querySelector(".flash");
 if (flash) setTimeout(() => flash.style.display = "none", 5000);
+
+// ── Scroll-reveal ─────────────────────────────────────────────
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+// ── Active nav on scroll ──────────────────────────────────────
+const sections  = document.querySelectorAll("section[id]");
+const navLinks  = nav.querySelectorAll("a[href^='#']");
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove("active"));
+      const active = nav.querySelector(`a[href="#${entry.target.id}"]`);
+      if (active) active.classList.add("active");
+    }
+  });
+}, { rootMargin: "-40% 0px -55% 0px" });
+
+sections.forEach(s => navObserver.observe(s));
+
+// ── Back-to-top ───────────────────────────────────────────────
+const backToTop = document.querySelector(".back-to-top");
+window.addEventListener("scroll", () => {
+  backToTop.classList.toggle("visible", window.scrollY > 400);
+}, { passive: true });
+backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));

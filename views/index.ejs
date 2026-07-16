@@ -18,6 +18,11 @@
 
 <main>
 
+  <!-- ── Back to top ──────────────────────────────────────── -->
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
   <!-- ── Hero ─────────────────────────────────────────────── -->
   <section class="hero section" id="home">
     <div class="hero-copy">
@@ -57,11 +62,11 @@
 
   <!-- ── About ─────────────────────────────────────────────── -->
   <section class="section about-grid" id="about">
-    <div>
+    <div class="reveal">
       <p class="section-kicker">About</p>
       <h2>Building toward world-class AI engineering through data-first problem solving.</h2>
     </div>
-    <div class="about-content">
+    <div class="about-content reveal reveal-delay-1">
       <p>
         I am a Computer Science graduate from Ambo University with a strong passion for Data Science,
         Artificial Intelligence, and Software Development. I specialise in transforming raw data into
@@ -82,14 +87,14 @@
 
   <!-- ── Skills ────────────────────────────────────────────── -->
   <section class="section" id="skills">
-    <p class="section-kicker">Skills</p>
-    <div class="section-heading">
+    <p class="section-kicker reveal">Skills</p>
+    <div class="section-heading reveal reveal-delay-1">
       <h2>Technical toolkit.</h2>
       <p>Programming, data science, machine learning, databases, and tools for practical data products.</p>
     </div>
     <div class="skills-grid">
-      <% skills.forEach(group => { %>
-      <article>
+      <% skills.forEach((group, i) => { %>
+      <article class="reveal" style="transition-delay: <%= i * 0.08 %>s">
         <h3><%= group.title %></h3>
         <ul>
           <% group.items.forEach(item => { %>
@@ -103,14 +108,14 @@
 
   <!-- ── Projects ──────────────────────────────────────────── -->
   <section class="section" id="projects">
-    <p class="section-kicker">Projects</p>
-    <div class="section-heading">
+    <p class="section-kicker reveal">Projects</p>
+    <div class="section-heading reveal reveal-delay-1">
       <h2>Selected projects.</h2>
       <p>Applied projects across machine learning, scraping, exploratory analysis, and dashboards.</p>
     </div>
     <div class="project-list">
-      <% projects.forEach(p => { %>
-      <article class="project-card">
+      <% projects.forEach((p, i) => { %>
+      <article class="project-card reveal" style="transition-delay: <%= i * 0.08 %>s">
         <div class="project-meta"><%= p.num %> — <%= p.category %></div>
         <h3><%= p.title %></h3>
         <p><%= p.desc %></p>
@@ -118,7 +123,10 @@
           <% p.tags.forEach(tag => { %><span><%= tag %></span><% }) %>
         </div>
         <div class="project-links">
-          <a href="<%= p.github %>" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="<%= p.github %>" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
           <a href="#contact">Request demo</a>
         </div>
       </article>
@@ -128,14 +136,14 @@
 
   <!-- ── Experience ────────────────────────────────────────── -->
   <section class="section experience" id="experience">
-    <p class="section-kicker">Experience</p>
-    <div class="section-heading">
+    <p class="section-kicker reveal">Experience</p>
+    <div class="section-heading reveal reveal-delay-1">
       <h2>Education and experience.</h2>
       <p>Computer science training, technical support experience, and practical data projects.</p>
     </div>
     <div class="timeline">
-      <% experience.forEach(e => { %>
-      <article>
+      <% experience.forEach((e, i) => { %>
+      <article class="reveal" style="transition-delay: <%= i * 0.1 %>s">
         <span></span>
         <p class="date"><%= e.org %></p>
         <h3><%= e.role %></h3>
@@ -147,22 +155,22 @@
 
   <!-- ── Services ──────────────────────────────────────────── -->
   <section class="section" id="services">
-    <p class="section-kicker">Services</p>
-    <div class="section-heading">
+    <p class="section-kicker reveal">Services</p>
+    <div class="section-heading reveal reveal-delay-1">
       <h2>What I can help with.</h2>
       <p>Focused services for teams, students, small businesses, and data-driven projects.</p>
     </div>
     <div class="skills-grid">
-      <% services.forEach(s => { %>
-      <article><h3><%= s.title %></h3><p><%= s.desc %></p></article>
+      <% services.forEach((s, i) => { %>
+      <article class="reveal" style="transition-delay: <%= i * 0.06 %>s"><h3><%= s.title %></h3><p><%= s.desc %></p></article>
       <% }) %>
     </div>
   </section>
 
   <!-- ── Quote ─────────────────────────────────────────────── -->
   <section class="section endorsement">
-    <p class="section-kicker">Goal</p>
-    <blockquote>
+    <p class="section-kicker reveal">Goal</p>
+    <blockquote class="reveal reveal-delay-1">
       &ldquo;My goal is to become a world-class AI Engineer while building intelligent
       applications that create real impact.&rdquo;
     </blockquote>
@@ -170,7 +178,7 @@
 
   <!-- ── Contact ───────────────────────────────────────────── -->
   <section class="section contact-section" id="contact">
-    <div>
+    <div class="reveal">
       <p class="section-kicker">Contact</p>
       <h2>Let&rsquo;s build something useful from data.</h2>
       <p>
@@ -185,7 +193,7 @@
       </div>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-1">
       <% if (flash) { %>
       <div class="flash <%= flash.type %>"><%= flash.text %></div>
       <% } %>
