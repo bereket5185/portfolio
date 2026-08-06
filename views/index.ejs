@@ -32,6 +32,10 @@
         I transform raw data into meaningful insights through data analysis,
         machine learning, automation, and intelligent applications.
       </p>
+      <!-- Typing tagline -->
+      <p class="typing-line" aria-hidden="true">
+        <span class="typing-text"></span><span class="typing-cursor">|</span>
+      </p>
       <div class="hero-actions">
         <a class="button primary" href="#projects">
           View projects
@@ -40,6 +44,10 @@
         <a class="button secondary" href="#contact">
           Contact
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 7l8 6 8-6"/></svg>
+        </a>
+        <a class="button secondary" href="<%= profile.github %>" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
         </a>
       </div>
     </div>
@@ -112,11 +120,17 @@
     <div class="section-heading reveal reveal-delay-1">
       <h2>Selected projects.</h2>
       <p>Applied projects across machine learning, scraping, exploratory analysis, and dashboards.</p>
+      <span class="project-count-badge"><%= projects.length %> projects</span>
     </div>
     <div class="project-list">
       <% projects.forEach((p, i) => { %>
-      <article class="project-card reveal" style="transition-delay: <%= i * 0.08 %>s">
-        <div class="project-meta"><%= p.num %> — <%= p.category %></div>
+      <article class="project-card reveal<%= p.featured ? ' project-card--featured' : '' %>" style="transition-delay: <%= i * 0.08 %>s">
+        <div class="project-meta">
+          <span class="project-num"><%= p.num %></span>
+          <span class="project-sep">—</span>
+          <%= p.category %>
+          <% if (p.featured) { %><span class="featured-badge">Featured</span><% } %>
+        </div>
         <h3><%= p.title %></h3>
         <p><%= p.desc %></p>
         <div class="tags">
@@ -186,10 +200,22 @@
         machine learning, dashboard, and AI application opportunities.
       </p>
       <div class="contact-panel" style="margin-top:28px;">
-        <a href="mailto:<%= profile.email %>"><%= profile.email %></a>
-        <a href="tel:<%= profile.phone.replace(/\s/g,'') %>"><%= profile.phone %></a>
-        <a href="<%= profile.github %>" target="_blank" rel="noreferrer">GitHub: github.com/bereket5185</a>
-        <a href="<%= profile.linkedin %>" target="_blank" rel="noreferrer">LinkedIn: bereket-gebrealif</a>
+        <a href="mailto:<%= profile.email %>">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 7l8 6 8-6"/></svg>
+          <%= profile.email %>
+        </a>
+        <a href="tel:<%= profile.phone.replace(/\s/g,'') %>">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 23 16.92z"/></svg>
+          <%= profile.phone %>
+        </a>
+        <a href="<%= profile.github %>" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          github.com/bereket5185
+        </a>
+        <a href="<%= profile.linkedin %>" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          linkedin.com/in/bereket-gebrealif
+        </a>
       </div>
     </div>
 
