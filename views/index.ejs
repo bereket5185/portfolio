@@ -124,12 +124,11 @@
     </div>
     <div class="project-list">
       <% projects.forEach((p, i) => { %>
-      <article class="project-card reveal<%= p.featured ? ' project-card--featured' : '' %>" style="transition-delay: <%= i * 0.08 %>s">
+      <article class="project-card reveal" style="transition-delay: <%= i * 0.08 %>s">
         <div class="project-meta">
           <span class="project-num"><%= p.num %></span>
           <span class="project-sep">—</span>
           <%= p.category %>
-          <% if (p.featured) { %><span class="featured-badge">Featured</span><% } %>
         </div>
         <h3><%= p.title %></h3>
         <p><%= p.desc %></p>

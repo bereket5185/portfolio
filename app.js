@@ -90,7 +90,6 @@ const data = {
       desc: "Binary spam classifier on 193,852 emails using TF-IDF vectorization and a Perceptron neural network. Achieved ~96.8% test accuracy with robust evaluation across precision, recall, and F1 — demonstrating NLP pipeline design from raw text to production-ready predictions.",
       tags: ["Python", "Scikit-learn", "Pandas", "TF-IDF", "Perceptron"],
       github: "https://github.com/bereket5185/_Email-Classification-Using-Perceptron",
-      featured: false,
     },
     {
       num: "02", category: "Regression",
@@ -98,7 +97,6 @@ const data = {
       desc: "Rigorous comparison of univariate, bivariate, and multivariate Linear Regression models on 545 properties. Multivariate model achieved R² = 0.649 with MAE of ~980K. Includes interactive prediction, residual diagnostics, and full error analysis.",
       tags: ["Python", "Scikit-learn", "Pandas", "Seaborn", "Matplotlib"],
       github: "https://github.com/bereket5185/House-Price-Prediction",
-      featured: false,
     },
     {
       num: "03", category: "Web Scraping",
@@ -106,7 +104,6 @@ const data = {
       desc: "Production-grade web scraper targeting eca.gov.et (Ethiopian Civil Aviation Authority) using BeautifulSoup and Requests. Extracts structured aviation data, handles pagination and anti-scraping patterns, and exports clean results for downstream analysis.",
       tags: ["BeautifulSoup", "Requests", "Pandas", "Python"],
       github: "https://github.com/bereket5185/Screaping_eca.gov.et",
-      featured: false,
     },
     {
       num: "04", category: "Analytics",
@@ -114,7 +111,6 @@ const data = {
       desc: "Comprehensive EDA pipeline covering missing value detection and imputation, outlier analysis, skewness correction, feature correlation mapping, and statistical hypothesis testing — turning messy raw data into a clean, analysis-ready dataset.",
       tags: ["EDA", "Data Cleaning", "Visualization"],
       github: "https://github.com/bereket5185/data-cleaning-eda",
-      featured: false,
     },
     {
       num: "05", category: "Dashboard",
@@ -122,7 +118,6 @@ const data = {
       desc: "Interactive business intelligence dashboards built with Power BI and Python. Visualizes customer segmentation, purchase trends, KPIs, and churn indicators — turning raw customer data into actionable insights for decision-makers.",
       tags: ["Power BI", "Python", "Business Insights", "Matplotlib"],
       github: "https://github.com/bereket5185/customer-data-dashboard",
-      featured: false,
     },
     {
       num: "06", category: "Machine Learning",
@@ -130,7 +125,6 @@ const data = {
       desc: "Full ML pipeline predicting customer churn on the Telco dataset using a tuned Decision Tree classifier. Covers EDA, feature engineering, GridSearchCV hyperparameter optimization, evaluation metrics, and a reusable prediction script. Final model persisted with Joblib.",
       tags: ["Python", "Scikit-learn", "Pandas", "Seaborn", "GridSearchCV"],
       github: "https://github.com/bereket5185/customer-churn-decision-tree",
-      featured: false,
     },
     {
       num: "07", category: "Machine Learning",
@@ -138,7 +132,6 @@ const data = {
       desc: "Fraud detection system using a Random Forest (Bagging) classifier on 10,000 transactions. Full pipeline includes One-Hot encoding, EDA, SMOTE-style class handling, confusion matrix, ROC curve analysis, and an interactive prediction interface.",
       tags: ["Python", "Scikit-learn", "Random Forest", "Pandas", "Matplotlib"],
       github: "https://github.com/bereket5185/Credit-Card-Fraud-Detection",
-      featured: true,
     },
     {
       num: "08", category: "Machine Learning",
@@ -146,7 +139,6 @@ const data = {
       desc: "End-to-end credit-risk pipeline predicting loan default probability. Implements IV/WoE feature selection, correlation filtering, and RF importance ranking. Trains and tunes Logistic Regression, Random Forest, and XGBoost with cross-validation and isotonic calibration. Evaluated using ROC-AUC, Gini coefficient, KS statistic, and cumulative gains charts.",
       tags: ["Python", "Scikit-learn", "XGBoost", "Pandas", "Matplotlib", "Seaborn"],
       github: "https://github.com/bereket5185/Probability-of-Default-Prediction-and-Feature-Selection",
-      featured: true,
     },
   ],
   experience: [
