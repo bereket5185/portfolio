@@ -54,6 +54,7 @@ const data = {
         "Perceptron Algorithm",
         "Decision Trees and Random Forest",
         "Model Evaluation (Accuracy, Precision, Recall, F1, MAE, RMSE, R²)",
+        "XGBoost and Gradient Boosting",
         "Natural Language Processing (NLP)",
         "TF-IDF Vectorization",
       ],
@@ -131,6 +132,13 @@ const data = {
       desc: "Built a fraud detection system using a Random Forest (Bagging) classifier on 10,000 transactions. Includes a full ML pipeline with One-Hot encoding, EDA, confusion matrix, ROC curve, and interactive prediction. Achieved high accuracy distinguishing fraudulent from normal transactions.",
       tags: ["Python", "Scikit-learn", "Random Forest", "Pandas", "Matplotlib"],
       github: "https://github.com/bereket5185/Credit-Card-Fraud-Detection",
+    },
+    {
+      num: "08", category: "Machine Learning",
+      title: "Probability of Default Prediction",
+      desc: "End-to-end credit-risk pipeline predicting loan default probability. Implements IV/WoE feature selection, correlation filtering, and RF importance ranking. Trains and tunes Logistic Regression, Random Forest, and XGBoost with cross-validation and probability calibration. Evaluated using ROC-AUC, Gini coefficient, KS statistic, calibration curves, and cumulative gains charts.",
+      tags: ["Python", "Scikit-learn", "XGBoost", "Pandas", "Matplotlib", "Seaborn"],
+      github: "https://github.com/bereket5185/Probability-of-Default-Prediction-and-Feature-Selection",
     },
   ],
   experience: [
