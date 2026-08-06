@@ -16,6 +16,8 @@
 
 * { box-sizing: border-box; }
 
+html, body { width: 100%; }
+
 html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
@@ -27,6 +29,8 @@ body {
   color: var(--text);
   font-family: var(--sans);
 }
+
+main { display: block; width: 100%; }
 
 body.dark {
   color-scheme: dark;
@@ -119,14 +123,14 @@ img, svg { display: block; }
 h1,h2,h3,p { margin-top: 0; }
 
 h1 {
-  max-width: 720px; margin-bottom: 28px;
+  margin-bottom: 28px;
   font-size: clamp(4.3rem,11vw,8.6rem);
   line-height: 0.88; letter-spacing: 0;
 }
 h1 strong { display: block; color: var(--accent); }
 
 .lead {
-  max-width: 690px; padding-left: 28px;
+  padding-left: 28px;
   border-left: 3px solid var(--accent-soft);
   color: var(--muted); font-size: clamp(1.35rem,3vw,2rem); line-height: 1.48;
 }
@@ -216,15 +220,15 @@ h1 strong { display: block; color: var(--accent); }
 .section-kicker { margin-bottom: 90px; }
 
 h2 {
-  max-width: 760px; margin-bottom: 24px;
+  margin-bottom: 24px;
   font-size: clamp(2.4rem,5vw,4.8rem); line-height: 0.98; letter-spacing: 0;
 }
 .section-heading {
   display: flex; align-items: end; justify-content: space-between;
-  gap: 32px; margin-bottom: 52px;
+  gap: 32px; margin-bottom: 52px; width: 100%;
 }
 .section-heading p, .about-content p, .contact-section p {
-  max-width: 660px; color: var(--muted); font-size: 1.22rem; line-height: 1.75;
+  color: var(--muted); font-size: 1.22rem; line-height: 1.75;
 }
 
 .metric-row {
@@ -236,7 +240,8 @@ h2 {
 .metric-row b { display: block; margin-bottom: 8px; color: var(--accent); font-size: 2rem; }
 .metric-row span { color: var(--muted); font-size: 0.92rem; }
 
-.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; width: 100%; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; width: 100%; }
+
 .skills-grid article, .project-card, .timeline article, .contact-panel {
   border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
 }
@@ -252,7 +257,7 @@ li::before {
   width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
 }
 
-.project-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; width: 100%; }
+.project-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 18px; width: 100%; }
 .project-card { padding: clamp(26px,4vw,42px); }
 .project-card h3 {
   margin: 22px 0 18px; font-size: clamp(2rem,4vw,3.5rem); line-height: 0.96;
@@ -291,7 +296,7 @@ li::before {
 
 .endorsement { padding-top: 60px; }
 blockquote {
-  max-width: 940px; margin: 0; color: var(--text);
+  margin: 0; color: var(--text);
   font-size: clamp(2rem,5vw,4rem); font-weight: 700; line-height: 1.18;
 }
 
