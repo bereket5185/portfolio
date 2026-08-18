@@ -687,3 +687,18 @@ blockquote {
   .featured-badge { font-size: 0.55rem; padding: 2px 8px; }
   /* keep GitHub button on small screens since buttons go full-width */
 }
+
+/* ── GitHub live data badges ──────────────────────────────────── */
+.project-stars {
+  display: inline-flex; align-items: center; gap: 3px;
+  margin-left: 8px; color: var(--muted);
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 600;
+}
+.project-stars svg { fill: currentColor; opacity: 0.75; }
+.tag-lang {
+  padding: 8px 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  border-radius: 999px; background: var(--accent-soft); color: var(--accent);
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}

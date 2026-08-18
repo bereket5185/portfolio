@@ -1,8 +1,62 @@
 const express = require("express");
 const path    = require("path");
+const https   = require("https");
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
+
+// ── GitHub API helper ────────────────────────────────────────────
+const GITHUB_USER = "bereket5185";
+
+function githubGet(apiPath) {
+  return new Promise((resolve, reject) => {
+    const options = {
+      hostname: "api.github.com",
+      path:     apiPath,
+      headers:  {
+        "User-Agent": "bereket-portfolio",
+        "Accept":     "application/vnd.github+json",
+        ...(process.env.GITHUB_TOKEN
+          ? { "Authorization": `Bearer ${process.env.GITHUB_TOKEN}` }
+          : {}),
+      },
+    };
+    https.get(options, (res) => {
+      let body = "";
+      res.on("data", (chunk) => (body += chunk));
+      res.on("end", () => {
+        try { resolve(JSON.parse(body)); }
+        catch (e) { reject(e); }
+      });
+    }).on("error", reject);
+  });
+}
+
+// Fetch all public repos that have the "portfolio" topic, sorted by push date
+async function fetchPortfolioRepos() {
+  try {
+    const result = await githubGet(
+      `/search/repositories?q=user:${GITHUB_USER}+topic:portfolio&sort=pushed&order=desc&per_page=50`
+    );
+    const repos = result.items || [];
+    return repos.map((repo, i) => ({
+      num:      String(i + 1).padStart(2, "0"),
+      category: repo.topics
+        .filter((t) => t !== "portfolio")
+        .map((t) => t.charAt(0).toUpperCase() + t.slice(1).replace(/-/g, " "))
+        .join(" · ") || "Project",
+      title:  repo.name.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+      desc:   repo.description || "No description provided.",
+      tags:   repo.topics.filter((t) => t !== "portfolio"),
+      github: repo.html_url,
+      stars:  repo.stargazers_count,
+      lang:   repo.language,
+    }));
+  } catch (err) {
+    console.error("GitHub API error:", err.message);
+    return [];
+  }
+}
 
 // ── Template engine ──────────────────────────────────────────────
 app.set("view engine", "ejs");
@@ -178,21 +232,26 @@ const data = {
 };
 
 // ── Routes ───────────────────────────────────────────────────────
-app.get("/", (req, res) => {
-  res.render("index", { ...data, flash: null });
+app.get("/", async (req, res) => {
+  const githubProjects = await fetchPortfolioRepos();
+  // Fall back to the hardcoded list if the API returns nothing
+  const projects = githubProjects.length > 0 ? githubProjects : data.projects;
+  res.render("index", { ...data, projects, flash: null });
 });
 
-app.post("/contact", (req, res) => {
+app.post("/contact", async (req, res) => {
   const { name, email, message } = req.body;
+  const githubProjects = await fetchPortfolioRepos();
+  const projects = githubProjects.length > 0 ? githubProjects : data.projects;
 
   if (!name || !email || !message) {
-    return res.render("index", { ...data, flash: { type: "error", text: "Please fill in all fields." } });
+    return res.render("index", { ...data, projects, flash: { type: "error", text: "Please fill in all fields." } });
   }
 
   // Log to console (wire up nodemailer / a DB here when ready)
   console.log(`\n📩 New message from ${name} <${email}>:\n${message}\n`);
 
-  res.render("index", { ...data, flash: { type: "success", text: "Message received — thanks! I will be in touch soon." } });
+  res.render("index", { ...data, projects, flash: { type: "success", text: "Message received — thanks! I will be in touch soon." } });
 });
 
 // ── 404 ──────────────────────────────────────────────────────────
