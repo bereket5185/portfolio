@@ -18,7 +18,6 @@
 
 <main>
 
-  <!-- ── Back to top ──────────────────────────────────────── -->
   <button class="back-to-top" aria-label="Back to top">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   </button>
@@ -26,13 +25,13 @@
   <!-- ── Hero ─────────────────────────────────────────────── -->
   <section class="hero section" id="home">
     <div class="hero-copy">
-      <p class="eyebrow"><span></span> <%= profile.headline %></p>
-      <h1>Bereket <strong>G/Alif.</strong></h1>
+      <p class="eyebrow"><span></span> Available for opportunities</p>
+      <h1>Turning data<br>into <strong>decisions.</strong></h1>
       <p class="lead">
-        I transform raw data into meaningful insights through data analysis,
-        machine learning, automation, and intelligent applications.
+        I'm Bereket — a Data Analyst and aspiring AI Engineer from Addis Ababa.
+        I build machine learning pipelines, automate insights, and turn messy datasets
+        into products people can use.
       </p>
-      <!-- Typing tagline -->
       <p class="typing-line" aria-hidden="true">
         <span class="typing-text"></span><span class="typing-cursor">|</span>
       </p>
@@ -42,7 +41,7 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <a class="button secondary" href="#contact">
-          Contact
+          Get in touch
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 7l8 6 8-6"/></svg>
         </a>
         <a class="button secondary" href="<%= profile.github %>" target="_blank" rel="noreferrer">
@@ -59,11 +58,11 @@
         <img src="<%= profile.image %>" alt="Portrait of <%= profile.name %>" />
         <div class="profile-label"><%= profile.name %></div>
         <div class="profile-open"><span></span> <%= profile.location %></div>
-        <div class="badge badge-years"><span></span> CS graduate</div>
-        <div class="badge badge-projects"><span></span> <%= projects.length %> projects featured</div>
+        <div class="badge badge-years"><span></span> CS Graduate</div>
+        <div class="badge badge-projects"><span></span> <%= projects.length %> Projects</div>
       </div>
       <div class="availability-pill">
-        <span></span> Available for opportunities
+        <span></span> Open to new opportunities
       </div>
     </div>
   </section>
@@ -72,22 +71,22 @@
   <section class="section about-grid" id="about">
     <div class="reveal">
       <p class="section-kicker">About</p>
-      <h2>Building toward world-class AI engineering through data-first problem solving.</h2>
+      <h2>Building toward world-class AI engineering — one dataset at a time.</h2>
     </div>
     <div class="about-content reveal reveal-delay-1">
       <p>
-        I am a Computer Science graduate from Ambo University with a strong passion for Data Science,
-        Artificial Intelligence, and Software Development. I specialise in transforming raw data into
-        meaningful insights through data analysis, machine learning, and automation.
+        I'm a Computer Science graduate from Ambo University with a deep passion for Data Science,
+        Machine Learning, and Artificial Intelligence. My work centers on transforming raw, messy data
+        into clean pipelines, meaningful insights, and practical ML products.
       </p>
       <p>
-        My expertise includes Python programming, SQL, data preprocessing, feature engineering, web
-        scraping, exploratory data analysis, machine learning, and data visualisation. My goal is to
-        become a world-class AI Engineer while building intelligent applications that create real impact.
+        From NLP classifiers and fraud detection systems to credit-risk models and time series forecasting,
+        I build end-to-end solutions using Python, Scikit-learn, XGBoost, and SQL. My goal is to become
+        a production-ready AI Engineer who ships things that create real-world impact.
       </p>
       <div class="metric-row">
-        <div><b>2016</b><span>Graduated, E.C.</span></div>
-        <div><b><%= projects.length %></b><span>Featured projects</span></div>
+        <div><b>2016</b><span>Graduated E.C.</span></div>
+        <div><b><%= projects.length %></b><span>Projects built</span></div>
         <div><b><%= services.length %></b><span>Service areas</span></div>
       </div>
     </div>
@@ -98,11 +97,11 @@
     <p class="section-kicker reveal">Skills</p>
     <div class="section-heading reveal reveal-delay-1">
       <h2>Technical toolkit.</h2>
-      <p>Programming, data science, machine learning, databases, and tools for practical data products.</p>
+      <p>Languages, frameworks, and tools I use to go from raw data to working ML products.</p>
     </div>
     <div class="skills-grid">
       <% skills.forEach((group, i) => { %>
-      <article class="reveal" style="transition-delay: <%= i * 0.08 %>s">
+      <article class="reveal" style="transition-delay: <%= i * 0.07 %>s">
         <h3><%= group.title %></h3>
         <ul>
           <% group.items.forEach(item => { %>
@@ -119,19 +118,19 @@
     <p class="section-kicker reveal">Projects</p>
     <div class="section-heading reveal reveal-delay-1">
       <h2>Selected projects.</h2>
-      <p>Applied projects across machine learning, scraping, exploratory analysis, and dashboards.</p>
+      <p>Applied ML, analytics, scraping, and dashboard work — each one a full end-to-end pipeline.</p>
       <span class="project-count-badge"><%= projects.length %> projects</span>
     </div>
     <div class="project-list">
       <% projects.forEach((p, i) => { %>
-      <article class="project-card reveal" style="transition-delay: <%= i * 0.08 %>s">
+      <article class="project-card reveal" style="transition-delay: <%= i * 0.06 %>s">
         <div class="project-meta">
           <span class="project-num"><%= p.num %></span>
           <span class="project-sep">—</span>
           <%= p.category %>
           <% if (p.stars > 0) { %>
             <span class="project-stars">
-              <svg viewBox="0 0 24 24" aria-hidden="true" width="13" height="13"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <%= p.stars %>
             </span>
           <% } %>
@@ -145,7 +144,7 @@
         <div class="project-links">
           <a href="<%= p.github %>" target="_blank" rel="noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            GitHub
+            View on GitHub
           </a>
           <a href="#contact">Request demo</a>
         </div>
@@ -158,14 +157,14 @@
   <section class="section experience" id="experience">
     <p class="section-kicker reveal">Experience</p>
     <div class="section-heading reveal reveal-delay-1">
-      <h2>Education and experience.</h2>
-      <p>Computer science training, technical support experience, and practical data projects.</p>
+      <h2>Education &amp; experience.</h2>
+      <p>A foundation in computer science, hands-on IT support, and self-directed ML engineering.</p>
     </div>
     <div class="timeline">
       <% experience.forEach((e, i) => { %>
       <article class="reveal" style="transition-delay: <%= i * 0.1 %>s">
-        <span></span>
         <p class="date"><%= e.org %></p>
+        <% if (e.period) { %><p class="period"><%= e.period %></p><% } %>
         <h3><%= e.role %></h3>
         <p><%= e.desc %></p>
       </article>
@@ -178,21 +177,25 @@
     <p class="section-kicker reveal">Services</p>
     <div class="section-heading reveal reveal-delay-1">
       <h2>What I can help with.</h2>
-      <p>Focused services for teams, students, small businesses, and data-driven projects.</p>
+      <p>Practical data services for teams, startups, students, and small businesses.</p>
     </div>
-    <div class="skills-grid">
+    <div class="skills-grid services-grid">
       <% services.forEach((s, i) => { %>
-      <article class="reveal" style="transition-delay: <%= i * 0.06 %>s"><h3><%= s.title %></h3><p><%= s.desc %></p></article>
+      <article class="reveal" style="transition-delay: <%= i * 0.06 %>s">
+        <% if (s.icon) { %><span class="service-icon"><%= s.icon %></span><% } %>
+        <h3><%= s.title %></h3>
+        <p><%= s.desc %></p>
+      </article>
       <% }) %>
     </div>
   </section>
 
   <!-- ── Quote ─────────────────────────────────────────────── -->
   <section class="section endorsement">
-    <p class="section-kicker reveal">Goal</p>
+    <p class="section-kicker reveal">Mission</p>
     <blockquote class="reveal reveal-delay-1">
-      &ldquo;My goal is to become a world-class AI Engineer while building intelligent
-      applications that create real impact.&rdquo;
+      My goal is to become a world-class AI Engineer while building intelligent
+      applications that create real impact in the world.
     </blockquote>
   </section>
 
@@ -200,12 +203,12 @@
   <section class="section contact-section" id="contact">
     <div class="reveal">
       <p class="section-kicker">Contact</p>
-      <h2>Let&rsquo;s build something useful from data.</h2>
+      <h2>Let&rsquo;s work together.</h2>
       <p>
-        Based in <%= profile.location %>. Open to data analysis, Python development,
-        machine learning, dashboard, and AI application opportunities.
+        Based in <%= profile.location %>. Open to data analysis, ML engineering,
+        Python development, dashboard, and AI application opportunities.
       </p>
-      <div class="contact-panel" style="margin-top:28px;">
+      <div class="contact-panel">
         <a href="mailto:<%= profile.email %>">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 7l8 6 8-6"/></svg>
           <%= profile.email %>
@@ -230,10 +233,13 @@
       <div class="flash <%= flash.type %>"><%= flash.text %></div>
       <% } %>
       <form class="contact-form" method="POST" action="/contact">
-        <input  type="text"  name="name"    placeholder="Your name"    required />
-        <input  type="email" name="email"   placeholder="Your email"   required />
+        <input  type="text"  name="name"    placeholder="Your name"    required autocomplete="name" />
+        <input  type="email" name="email"   placeholder="Your email"   required autocomplete="email" />
         <textarea            name="message" placeholder="Your message" required></textarea>
-        <button type="submit">Send message</button>
+        <button type="submit">
+          Send message
+          <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-left:6px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+        </button>
       </form>
     </div>
   </section>

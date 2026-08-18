@@ -1,9 +1,9 @@
 <header class="site-header">
-  <a class="brand" href="#home" aria-label="Go to home">
-    <span>BG</span><i></i><span>AI</span>
+  <a class="brand" href="#home" aria-label="Bereket G/Alif — home">
+    <span class="b1">BG</span><i></i><span class="b2">AI</span>
   </a>
 
-  <nav class="nav" id="nav">
+  <nav id="nav" aria-label="Main navigation">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
@@ -13,14 +13,12 @@
   </nav>
 
   <div class="header-actions">
-    <button class="icon-button" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M21 12.7A8.5 8.5 0 1 1 11.3 3a6.8 6.8 0 0 0 9.7 9.7Z"/>
-      </svg>
+    <button id="themeToggle" aria-label="Switch theme" title="Toggle dark / light mode">
+      <!-- icon injected by script.js -->
     </button>
-    <button class="icon-button menu-button" id="menuToggle" aria-label="Open menu" aria-expanded="false" title="Menu">
+    <button id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4 7h16M4 12h16M4 17h16"/>
+        <path d="M3 12h18M3 6h18M3 18h18"/>
       </svg>
     </button>
   </div>
