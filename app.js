@@ -140,6 +140,13 @@ const data = {
       tags: ["Python", "Scikit-learn", "XGBoost", "Pandas", "Matplotlib", "Seaborn"],
       github: "https://github.com/bereket5185/Probability-of-Default-Prediction-and-Feature-Selection",
     },
+    {
+      num: "09", category: "Time Series",
+      title: "Restaurant Sales Forecasting",
+      desc: "Time series ML project forecasting daily restaurant sales from 22,896 transactions. Aggregated to 60 daily observations, engineered lag features, rolling statistics, and cyclical date encoding. Trained Linear Regression and Random Forest models for 1-day and 7-day horizons. Next-day forecast: 222,591 | 7-day cumulative: 1,424,410.",
+      tags: ["Python", "Scikit-learn", "Pandas", "Random Forest", "Time Series"],
+      github: "https://github.com/bereket5185/restaurant-transactions_Time_series",
+    },
   ],
   experience: [
     {
