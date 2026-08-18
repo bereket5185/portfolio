@@ -71,7 +71,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const data = {
   meta: {
     title: "Bereket G/Alif | Data Analyst & AI Engineer Portfolio",
-    description: "Bereket G/Alif — CS graduate, Data Analyst and aspiring AI Engineer from Addis Ababa. 8 projects spanning ML, NLP, credit-risk modeling, fraud detection, web scraping, and dashboards.",
+    description: "Bereket G/Alif — CS graduate, Data Analyst and aspiring AI Engineer from Addis Ababa. Projects spanning ML, NLP, credit-risk modeling, fraud detection, web scraping, and dashboards.",
   },
   profile: {
     name:      "Bereket G/Alif",
